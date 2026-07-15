@@ -1,5 +1,60 @@
 from ast_nodes import Expr,Number, Variable, Add, Subtract, Multiply, Power, Divide ,Function
 import math
+import time
+import os
+
+def print_splash():
+    # Clear terminal for a fresh boot-up feel
+    os.system('cls' if os.name == 'nt' else 'clear')
+    
+    # ANSI Cyan color code
+    CYAN = "\033[96m"
+    RESET = "\033[0m"
+    
+    logo = f"""
+{CYAN}
+ ██████╗      ██╗  █████╗ ██╗   ██╗███████╗███████╗
+ ██╔══██╗     ██║ ██╔══██╗╚██╗ ██╔╝██╔════╝██╔════╝
+ ██████╔╝     ██║ ███████║ ╚████╔╝ █████╗  █████╗  
+ ██╔══██╗██   ██║ ██╔══██║  ╚██╔╝  ██╔══╝  ██╔══╝  
+ ██████╔╝╚█████╔╝ ██║  ██║   ██║   ███████╗███████╗
+ ╚═════╝  ╚════╝  ╚═╝  ╚═╝   ╚═╝   ╚══════╝╚══════╝
+{RESET}
+    """
+    
+    print(logo)
+    print("      COMPILER INITIALIZED SUCCESSFULLY")
+    print("      ---------------------------------------")
+    print("      Loading parsing libraries...")
+    time.sleep(0.4) 
+    print("      Verifying integration rules...")
+    time.sleep(0.3)
+    print("      System ready for input.\n")
+
+if __name__ == "__main__":
+    print_splash()
+    # Your main loop logic goes here
+```
+
+### Step 2: Build the `main.exe`
+Now that the branding is crisp, let’s package it. 
+
+1.  Open your **VS Code Terminal**.
+2.  Make sure you have `pyinstaller` installed (`pip install pyinstaller`).
+3.  Run the build command:
+    ```bash
+    pyinstaller --onefile main.py
+    ```
+
+### Step 3: Verify the Build
+Once that finishes:
+1.  Look for a new folder called `dist/` in your `math_compiler` directory.
+2.  Inside `dist/`, you will see `main.exe`.
+3.  **Double-click it.** 
+
+You should see the terminal window pop up, fill with that clean **BJAYEE** logo in Cyan, and pause exactly as you defined.
+
+**Does that look like the logo you wanted?** If it does, your branding is done, and you are ready to ship this to your friends!
 # The Master Rulebook for Functions
 # Format: "function_name": lambda argument, variable: (Chain Rule AST)
 DERIVATIVE_RULES = {
